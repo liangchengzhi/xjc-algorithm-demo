@@ -1,6 +1,6 @@
-package com.xjc.algorithm.liangcz.geek.section1;
+package com.xjc.algorithm.liangcz.geek.lession4;
 
-public class Test04_Insert {
+public class Lession04_Insert {
 	int countExecuteLine = 0;
 	private int n = 10; // 为了编译通过，这里设了一个n的值,n应该是变量
 	int[] array = new int[n];
@@ -32,7 +32,7 @@ public class Test04_Insert {
 	}
 	
 	public static void main(String[] args) {
-		Test04_Insert insertClass = new Test04_Insert();
+		Lession04_Insert insertClass = new Lession04_Insert();
 		while(true){
 			insertClass.insert(10);	
 		}
