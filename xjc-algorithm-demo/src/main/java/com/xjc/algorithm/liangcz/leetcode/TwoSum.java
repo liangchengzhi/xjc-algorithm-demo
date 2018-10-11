@@ -1,4 +1,4 @@
-package com.xjc.algorithm.liangcz.leetcode.easy;
+package com.xjc.algorithm.liangcz.leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
