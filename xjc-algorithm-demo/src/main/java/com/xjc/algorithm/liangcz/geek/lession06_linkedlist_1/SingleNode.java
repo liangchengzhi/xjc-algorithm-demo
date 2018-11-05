@@ -77,8 +77,8 @@ public class SingleNode {
 	public void delete(String oldData){
 		SingleNode nowNode = this;
 		if(oldData.equals(nowNode.data)){
-			this.next = nowNode.next.next;
-			this.data = nowNode.next.data;
+			nowNode.data = nowNode.next.data;
+			nowNode.next = nowNode.next.next;
 			return;
 		}
 		while(nowNode.next != null){
@@ -99,7 +99,7 @@ public class SingleNode {
 		// singleNode.find("我是二");
 		singleNode.insert("我是二","我是一点五");
 		// singleNode.walk();
-		singleNode.delete("我是三");
+		singleNode.delete("我是一");
 		singleNode.walk();
 	}
 }
