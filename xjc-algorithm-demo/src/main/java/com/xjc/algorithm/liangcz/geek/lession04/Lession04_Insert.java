@@ -1,4 +1,4 @@
-package com.xjc.algorithm.liangcz.geek.lession4;
+package com.xjc.algorithm.liangcz.geek.lession04;
 
 public class Lession04_Insert {
 	int countExecuteLine = 0;

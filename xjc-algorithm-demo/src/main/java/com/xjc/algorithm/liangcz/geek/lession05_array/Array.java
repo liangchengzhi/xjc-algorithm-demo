@@ -1,4 +1,4 @@
-package com.xjc.algorithm.liangcz.geek.lession5_array;
+package com.xjc.algorithm.liangcz.geek.lession05_array;
 /**
  *
  * @author liangcz

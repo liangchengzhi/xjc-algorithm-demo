@@ -1,4 +1,4 @@
-package com.xjc.algorithm.liangcz.geek.lession9_queue;
+package com.xjc.algorithm.liangcz.geek.lession09_queue;
 /**
  * 循环队列
  * 循环队列避免出列和入列对数据的搬运

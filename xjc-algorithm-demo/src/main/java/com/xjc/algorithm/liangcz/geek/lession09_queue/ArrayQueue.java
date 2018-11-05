@@ -1,4 +1,4 @@
-package com.xjc.algorithm.liangcz.geek.lession9_queue;
+package com.xjc.algorithm.liangcz.geek.lession09_queue;
 
 //用数组实现的队列
 public class ArrayQueue {

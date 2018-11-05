@@ -1,4 +1,4 @@
-package com.xjc.algorithm.liangcz.geek.lession8_stack;
+package com.xjc.algorithm.liangcz.geek.lession08_stack;
 /**
  * 数组栈
  * @author liangcz

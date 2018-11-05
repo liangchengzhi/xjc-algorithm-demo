@@ -1,4 +1,4 @@
-package com.xjc.algorithm.liangcz.geek.lession6_linkedlist_1;
+package com.xjc.algorithm.liangcz.geek.lession06_linkedlist_1;
 /**
  * 双向链表
  * @author liangcz

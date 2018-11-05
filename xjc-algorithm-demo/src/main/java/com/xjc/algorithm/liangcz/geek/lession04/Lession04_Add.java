@@ -1,4 +1,4 @@
-package com.xjc.algorithm.liangcz.geek.lession4;
+package com.xjc.algorithm.liangcz.geek.lession04;
 
 public class Lession04_Add {
 	private int len = 10; // 为了编译通过，这里设了一个n的值,n应该是变量
