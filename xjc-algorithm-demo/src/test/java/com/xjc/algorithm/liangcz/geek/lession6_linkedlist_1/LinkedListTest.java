@@ -2,6 +2,9 @@ package com.xjc.algorithm.liangcz.geek.lession6_linkedlist_1;
 
 import org.junit.Test;
 
+import com.xjc.algorithm.liangcz.geek.lession06_linkedlist_1.LinkedList;
+import com.xjc.algorithm.liangcz.geek.lession06_linkedlist_1.LinkedList.Node;
+
 /**
  * 双向链表测试
  * @author liangcz
@@ -60,5 +63,13 @@ public class LinkedListTest {
 		linkedList.put("我是三");
 		linkedList.insertAfter(linkedList.findByValue("我是二"), linkedList.new Node("我是二点五"));
 		linkedList.printAll();
+	}
+	@Test
+	public void test_findByIndex(){
+		LinkedList linkedList = new LinkedList();
+		linkedList.put("我是一");
+		linkedList.put("我是二");
+		linkedList.put("我是三");
+		System.out.println(linkedList.findByIndex(3).getData());
 	}
 }
