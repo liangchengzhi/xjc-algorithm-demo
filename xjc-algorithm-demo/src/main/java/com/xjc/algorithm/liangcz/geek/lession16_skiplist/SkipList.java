@@ -23,9 +23,12 @@ public class SkipList {
 		Node p = head;
 		/* 最最顶层开始找，每一层都要遍历，如果一层中，比找的数小，则在区间内，作为down节点 */
 		for (int i = levelCount - 1; i >= 0; --i) {
+			System.out.println("当前级别:" + (i+1));
 			while (p.forwards[i] != null && p.forwards[i].data < value) {
+				System.out.println(p.forwards[i]);
 				p = p.forwards[i];
 			}
+			System.out.println("跳级别：" + p.forwards[i]);
 		}
 		/* 遍历完后，down节点第一个元素是，则是，否则没有该元素 */
 		if (p.forwards[0] != null && p.forwards[0].data == value) {
@@ -56,7 +59,7 @@ public class SkipList {
 		}
 		/* 找到更新节点的位置，插入新节点 */
     	for (int i = 0; i < level; ++i) {
- 			newNode.forwards[i] = update[i].forwards[i];
+ 			newNode.forwards[i] = update[i].forwards[i]; // forward[] 16位，永远只用一位？
    			update[i].forwards[i] = newNode;
 		}
 
@@ -107,7 +110,7 @@ public class SkipList {
 	public class Node {
 		private int data = -1;
 		private Node forwards[] = new Node[MAX_LEVEL];
-		private int maxLevel = 0;
+		private int maxLevel = 0;// 注意，这个maxLevel不是指数据存放的级别，而是指该链表索引级别最高层
 
 		@Override
 		public String toString() {
@@ -125,18 +128,20 @@ public class SkipList {
 
 	public static void main(String[] args) {
 		SkipList skipList = new SkipList();
-		skipList.insert(5);
+	/*	skipList.insert(5);
 		skipList.insert(7);
-		skipList.insert(9);
-		/*
-		int max = 10000;
+		skipList.insert(9);*/
+		
+		int max = 100;
 		TimeCalcUtil.start();
 		for (int i = 0; i < max; i++) {
 			skipList.insert(i);
 		}
 		TimeCalcUtil.end();
+		Node node = skipList.find(30);
+		System.out.println(node);
 		// skipList.printAll();
-		TimeCalcUtil.start();
+/*		TimeCalcUtil.start();
 		Node node = skipList.find(1000);
 		TimeCalcUtil.end();
 		System.out.println(node);*/
