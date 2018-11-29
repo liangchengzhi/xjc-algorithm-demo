@@ -49,6 +49,51 @@ public class BinarySearchTree {
 			}
 		}
 	}
+	/**
+	 * 删除节点
+	 * @param data
+	 */
+	public boolean delete(int data){
+		Node p = root; // 表示要删除的节点，初始化为根节点
+		Node pp = null; 
+		// 寻找节点对象
+		while(p != null && p.data != data){
+			pp = p;
+			if(data > p.data) p = p.right;
+			else p = p.left;
+		}
+		if(p == null) return false;// 没找到
+		// 有两个字节点的场景，这里实现比较巧妙，是替换要删除的节点
+		if(p.left != null && p.right != null){
+			// 查找右子树的最左子节点，替换到要删除节点的位置
+			Node minP = p.right;
+			Node minPP = p; // minPP 表示minP 的父节点
+			while(minP.left != null){
+				minPP = minP;
+				minP = minP.left;
+			}
+			p.data = minP.data;// 将值拷贝到原节点
+			// 注意，后面相当于将要删除的节点变成minP节点了
+			p = minP;
+			pp = minPP;
+		}
+		// 删除节点是叶子节点或者仅有一个子节点
+		// 寻找删除节点的child节点，有左右子节点，以左子节点为准
+		Node child; // p的子节点
+		if(p.left != null) child = p.left;
+		else if(p.right != null) child = p.right;
+		else child = null;
+		// 找到了位置，不管是什么节点，都是按这个来操作。前面都是铺垫
+		// 前提找到了pp p child
+		if(pp == null){ // 要删除的节点是根节点
+			root = child; 
+		}else if(pp.left == p){
+			pp.left = child;
+		}else if(pp.right == p){
+			pp.right = child;
+		}
+		return true;
+	}
 	
 	
 	
